@@ -47,3 +47,24 @@ function wptk_get_state_options($selected = '')
         return $options;
 }
 
+//
+// Remove these dashboard widgets from all dashboards regardless of role
+//
+//
+function wptk_remove_dashboard_widgets() 
+{
+    global $wp_meta_boxes;
+
+    // Remove specific default dashboard widgets
+    remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+    remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side');
+    remove_meta_box('dashboard_primary', 'dashboard', 'side');
+    remove_meta_box('dashboard_secondary', 'dashboard', 'side');
+    remove_meta_box('dashboard_activity', 'dashboard', 'normal');
+    remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
+    remove_meta_box('dashboard_site_health', 'dashboard', 'normal');
+    remove_action('welcome_panel', 'wp_welcome_panel');
+}
+add_action('wp_dashboard_setup', 'wptk_remove_dashboard_widgets',99999 );
+
+
