@@ -7,6 +7,9 @@ WP.Toolkit is a lightweight utility plugin providing reusable functions and secu
 
 ## 🚀 Features
 
+### WordPress Support:  
+- 6.8.3
+
 ### 🔐 Security
 - Disables XML-RPC requests.
 - Hides “WordPress” branding from page titles.
